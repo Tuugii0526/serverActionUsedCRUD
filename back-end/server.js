@@ -1,6 +1,5 @@
 import express from "express";
 import fs from "fs";
-const port = 1234;
 const app = express();
 app.use(express.json());
 app.get("/", (req, res) => {
@@ -129,6 +128,6 @@ app.get("/productById/:id",(req,res)=>{
     })
   })
 })
-app.listen(port, () => {
-  console.log(`server started working : http://localhost:${port}`);
+app.listen(_, () => {
+  console.log(`server started working : https://simple-project-bztl.onrender.com`);
 });
