@@ -10,7 +10,7 @@ export const ItemCard=({item}:{item:Item})=>{
                 <p>Product name : {item.name}</p>
                 <div className="flex gap-2 ">
                     <DeleteProduct id={item.id}/>
-                    <Link href={`/${item.id}/edit`}>
+                    <Link href={`/edit/${item.id}`}>
                       <EditIcon />
                     </Link>
                 </div>

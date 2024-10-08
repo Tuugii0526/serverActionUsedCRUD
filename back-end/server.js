@@ -79,7 +79,7 @@ app.delete("/product/delete", (req, res) => {
 });
 app.patch("/product/edit", (req, res) => {
   const {id,name,category,price}=req.body;
-  fs.readFile('.lib/data.json','utf-8',(error,data)=>{
+  fs.readFile('./lib/data.json','utf-8',(error,data)=>{
     if(error){
       res.json({
         success:false
@@ -116,30 +116,16 @@ app.patch("/product/edit", (req, res) => {
     }
   })
 });
-app.get("productById/:id",(req,res)=>{
+app.get("/productById/:id",(req,res)=>{
   const id=req.params.id
   fs.readFile('./lib/data.json',"utf-8",(error,data)=>{
     if(error){
       res.json({
-        success:false
       })
     }
     const parsedData=data? JSON.parse(data) : []
-    if(!parsedData.length)
-    {
-      res.json({
-        success:false
-      })
-    }
-    const foundProduct=parsedData.find(data=>data.id===id)
-    if(!foundProduct)
-    {
-       res.json({
-        success:false
-       })
-    }
+    const foundProduct=parsedData?.find(data=>data.id===id)
     res.json({
-      success:true,
       product:foundProduct
     })
   })

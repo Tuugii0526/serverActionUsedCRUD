@@ -13,13 +13,7 @@ export const fetchProductById=async (id:string)=>{
 try {
   const res=await fetch(`http://localhost:1234/productById/${id}`)
   const data=await res.json()
-  if(data.success)
-  {
-    return data.data
-  }
-  else{
-    return null
-  }
+  return data?.data
 } catch (error) {
   console.log(error)
 }
