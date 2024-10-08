@@ -1,4 +1,3 @@
-"use client"
 import {  editProduct } from "@/lib/actions";
 import { Item } from "@/lib/definition";
 import { useFormState } from "react-dom";

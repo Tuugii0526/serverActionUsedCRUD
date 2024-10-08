@@ -2,14 +2,12 @@
 
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
+import { Item } from "./definition"
 
 const urlForAdd='http://localhost:1234/product/add'
 const urlForDelete='http://localhost:1234/product/delete'
 const urlForEdit='http://localhost:1234/product/edit'
-type State={
-    errors:null
-}
-export const createProduct= async(state:State,formData:FormData)=>{
+export const createProduct= async(state:Item,formData:FormData)=>{
   const newFormData={
     name:formData.get('productName'),
     category:formData.get('productCategory'),
@@ -50,7 +48,7 @@ await fetch(urlForDelete,options)
 }
 revalidatePath('/')
 }
-export const editProduct=async (id:string,preState:State,formData:FormData)=>{
+export const editProduct=async (id:string,preState:Item,formData:FormData)=>{
 const newFormData={
   id:id,
   name:formData.get('productName'),

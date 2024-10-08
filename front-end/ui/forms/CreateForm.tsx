@@ -5,7 +5,7 @@ const initialState={
     id:'',
     name:'',
     category:'',
-    price:null
+    price:1
 }
 export const CreateForm = () => {
     const [state,formAction]=useFormState(createProduct,initialState)
