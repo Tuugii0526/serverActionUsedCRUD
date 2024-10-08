@@ -1,8 +1,7 @@
-"use client"
 import { Item } from "@/lib/definition"
-import { DeleteIcon } from "./icons/DeleteIcon"
 import { EditIcon } from "./icons/EditIcon"
-import { useRef } from "react"
+import { DeleteProduct } from "./buttons"
+import Link from "next/link"
 export const ItemCard=({item}:{item:Item})=>{
     
     return (
@@ -10,8 +9,10 @@ export const ItemCard=({item}:{item:Item})=>{
             <div className="flex gap-5 items-center">
                 <p>Product name : {item.name}</p>
                 <div className="flex gap-2 ">
-                    <DeleteIcon />
-                    <EditIcon />
+                    <DeleteProduct id={item.id}/>
+                    <Link href={`/${item.id}/edit`}>
+                      <EditIcon />
+                    </Link>
                 </div>
             </div>
             <p>Product category : {item.category}</p>
