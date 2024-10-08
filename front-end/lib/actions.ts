@@ -7,7 +7,7 @@ const urlForAdd='http://localhost:1234/product/add'
 const urlForDelete='http://localhost:1234/product/delete'
 const urlForEdit='http://localhost:1234/product/edit'
 type State={
-    errors:{}
+    errors:null
 }
 export const createProduct= async(state:State,formData:FormData)=>{
   const newFormData={
