@@ -1,3 +1,4 @@
+"use client"
 import {  editProduct } from "@/lib/actions";
 import { Item } from "@/lib/definition";
 import { useFormState } from "react-dom";
@@ -5,13 +6,15 @@ const initialState={
     id:'',
     name:'',
     category:'',
-    price:null
+    price:0
 }
 export const EditForm = ({item}:{item:Item}) => {
-  const editProductWithId=editProduct.bind(null,item.id)
-    const [state,formAction]=useFormState(editProductWithId,initialState)
+    const [state,formAction]=useFormState(editProduct,initialState)
   return (
     <form className="w-1/2 h-1/2 flex flex-col justify-around gap-1 m-auto" action={formAction} >
+      <label className="hidden" htmlFor="id">
+        <input  type="text" id="id" name="id" value={item.id}/>
+      </label>
       <label htmlFor="productName">
         Product name
         <input

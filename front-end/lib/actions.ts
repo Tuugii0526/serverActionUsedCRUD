@@ -48,9 +48,9 @@ await fetch(urlForDelete,options)
 }
 revalidatePath('/')
 }
-export const editProduct=async (id:string,preState:Item,formData:FormData)=>{
+export const editProduct=async (preState:Item,formData:FormData)=>{
 const newFormData={
-  id:id,
+  id:formData.get('id'),
   name:formData.get('productName'),
     category:formData.get('productCategory'),
     price:Number(formData.get('productPrice'))
