@@ -21,7 +21,7 @@ export const EditForm = ({item}:{item:Item}) => {
           id="productName"
           name="productName"
           placeholder="Product name"
-          value={item.name}
+          defaultValue={item.name}
           required
         />
       </label>
@@ -31,7 +31,7 @@ export const EditForm = ({item}:{item:Item}) => {
           className="add-inputs"
           id="productCategory"
           name="productCategory"
-          value={item.category}
+          defaultValue={item.category}
         >
           <option value="Category" selected disabled>
             Select a category
@@ -50,7 +50,7 @@ export const EditForm = ({item}:{item:Item}) => {
           id="productPrice"
           name="productPrice"
           placeholder="Price"
-          value={item.price}
+          defaultValue={item.price}
           min={1}
         />
       </label>

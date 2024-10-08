@@ -120,8 +120,7 @@ app.get("/productById/:id",(req,res)=>{
   const id=req.params.id
   fs.readFile('./lib/data.json',"utf-8",(error,data)=>{
     if(error){
-      res.json({
-      })
+      res.json([])
     }
     const parsedData=data? JSON.parse(data) : []
     const foundProduct=parsedData?.find(data=>data.id===id)
