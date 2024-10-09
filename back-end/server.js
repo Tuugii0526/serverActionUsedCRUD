@@ -1,7 +1,7 @@
 import express from "express";
 import fs from "fs";
 const app = express();
-const port=1234
+const port=5678
 app.use(express.json());
 app.get("/", (req, res) => {
   console.log("Server started working");
@@ -130,5 +130,6 @@ app.get("/productById/:id",(req,res)=>{
   })
 })
 app.listen(port, () => {
-  console.log(`server started working : https://simple-project-bztl.onrender.com`);
+  // console.log(`server started working : https://simple-project-bztl.onrender.com`);
+  console.log(`server started working at http://localhost:${port}`)
 });

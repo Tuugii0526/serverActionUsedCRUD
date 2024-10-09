@@ -26,6 +26,7 @@ export const createProduct= async(state:Item,formData:FormData)=>{
     console.log(error)
   }
   revalidatePath('/');
+  revalidatePath('/add')
   redirect('/');
 }
 export const deleteProduct=async (id:string)=>{
@@ -46,6 +47,7 @@ await fetch(urlForDelete,options)
   console.log(error)
 }
 revalidatePath('/')
+revalidatePath('/edit')
 }
 export const editProduct=async (preState:Item,formData:FormData)=>{
 const newFormData={
