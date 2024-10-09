@@ -1,5 +1,4 @@
 const urlForGet = `${process.env.BACKEND_URL}/product/get`;
-const urlForGetById=`${process.env.BACKEND_URL}/product/edit`
 export const fetchProducts = async () => {
   try {
     const res = await fetch(urlForGet);

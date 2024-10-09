@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
+import "dotenv/config"
 export const metadata: Metadata = {
   title: "Simple project",
   description: "Step by step",
