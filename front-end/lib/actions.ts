@@ -3,10 +3,9 @@
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 import { Item } from "./definition"
-
-const urlForAdd='http://localhost:1234/product/add'
-const urlForDelete='http://localhost:1234/product/delete'
-const urlForEdit='http://localhost:1234/product/edit'
+const urlForAdd=`${process.env.BACKEND_URL}/product/add`
+const urlForDelete=`${process.env.BACKEND_URL}/product/delete` 
+const urlForEdit=`${process.env.BACKEND_URL}/product/edit`
 export const createProduct= async(state:Item,formData:FormData)=>{
   const newFormData={
     name:formData.get('productName'),

@@ -1,5 +1,5 @@
-const urlForGet = "http://localhost:1234/product/get";
-const urlForGetById="http://localhost:1234/product/edit"
+const urlForGet = `${process.env.BACKEND_URL}/product/get`;
+const urlForGetById=`${process.env.BACKEND_URL}/product/edit`
 export const fetchProducts = async () => {
   try {
     const res = await fetch(urlForGet);
@@ -11,7 +11,7 @@ console.log(error)
 };
 export const fetchProductById=async (id:string)=>{
 try {
-  const res=await fetch(`http://localhost:1234/productById/${id}`)
+  const res=await fetch(`${process.env.BACKEND_URL}/productById/${id}`)
   const data=await res.json()
   return data?.product
 } catch (error) {
